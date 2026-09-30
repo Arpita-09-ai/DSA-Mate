@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>DSA Mate — Local Demo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>DSA Mate</h1>
+    <div class="controls">
+      <button id="darkToggle">🌙 Dark</button>
+      <button id="exportBtn">Export Progress</button>
+      <input id="importFile" type="file" accept=".json" style="display:none">
+      <button id="importBtn">Import Progress</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="left">
+      <section class="box">
+        <h3>Filters</h3>
+        <label>Topic:
+          <select id="topicFilter"><option>All</option></select>
+        </label>
+        <label>Difficulty:
+          <select id="diffFilter"><option>All</option><option>Easy</option><option>Medium</option><option>Hard</option></select>
+        </label>
+        <label>Search:
+          <input id="searchBox" placeholder="search title">
+        </label>
+        <button id="resetFilters">Reset</button>
+      </section>
+
+      <section class="box">
+        <h3>Daily Targets</h3>
+        <ul id="dailyTargets"></ul>
+        <button id="shuffleTargets">New Targets</button>
+      </section>
+
+      <section class="box">
+        <h3>Leaderboard</h3>
+        <ol id="leaderboard"></ol>
+      </section>
+
+      <section class="box small">
+        <h3>Add Question</h3>
+        <input id="newTitle" placeholder="Title">
+        <input id="newTopic" placeholder="Topic">
+        <select id="newDiff"><option>Easy</option><option>Medium</option><option>Hard</option></select>
+        <textarea id="newDesc" placeholder="Description / Hint (optional)"></textarea>
+        <label>Test Case Input: <input id="newTestIn" placeholder="e.g. [1,2,3]"></label>
+        <label>Expected Output: <input id="newTestOut" placeholder="e.g. 6"></label>
+        <button id="addQuestionBtn">Add Question</button>
+      </section>
+    </aside>
+
+    <section class="center">
+      <div class="box">
+        <h2>Questions</h2>
+        <ul id="questionList" class="questionList"></ul>
+      </div>
+
+      <div class="box" id="details" style="display:none">
+        <div class="details-head">
+          <h2 id="qTitle"></h2>
+          <div class="meta">
+            <span id="qTopicBadge"></span>
+            <span id="qDiffBadge"></span>
+            <span id="qStatusBadge"></span>
+          </div>
+        </div>
+
+        <p id="qDesc"></p>
+
+        <div class="actions">
+          <button id="startTimerBtn">Start Timer (10m)</button>
+          <button id="clearTimerBtn">Stop Timer</button>
+          <span id="timerLabel"></span>
+          <button id="hintBtn">Show Hint</button>
+          <button id="markSolvedBtn">Mark Solved</button>
+          <button id="reportBtn">Report Issue</button>
+        </div>
+
+        <h3>Code Editor (JavaScript demo)</h3>
+        <textarea id="codeEditor" placeholder="// Write JS code that returns or logs expected output"></textarea>
+
+        <div class="runner">
+          <input id="stdinBox" placeholder="Input for test (optional)">
+          <button id="runBtn">Run</button>
+          <button id="runTestBtn">Run Test Case</button>
+          <button id="saveSolutionBtn">Save Solution (local)</button>
+        </div>
+
+        <h4>Output</h4>
+        <pre id="outputBox" class="outputBox"></pre>
+      </div>
+    </section>
+
+    <aside class="right">
+      <section class="box">
+        <h3>Progress</h3>
+        <div id="progressSummary"></div>
+      </section>
+
+      <section class="box">
+        <h3>Weak Area</h3>
+        <p id="weakArea">-</p>
+      </section>
+
+      <section class="box">
+        <h3>Export / Backup</h3>
+        <p>Use export to save progress (JSON). Import to load a backup.</p>
+      </section>
+    </aside>
+  </main>
+
+  <footer>
+    <small>DSA Mate — Local Demo • JS-runner (demo-only)</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

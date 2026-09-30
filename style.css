@@ -1,0 +1,45 @@
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --accent:#2b6ef6;
+  --muted:#666;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;
+  background:var(--bg);color:#111;
+}
+header{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:linear-gradient(90deg,#fff 0 0);box-shadow:0 1px 0 rgba(0,0,0,0.06)}
+header h1{margin:0;font-size:20px}
+.controls button{margin-left:8px;padding:6px 10px;border-radius:6px;border:1px solid #ddd;background:#fff;cursor:pointer}
+.layout{display:grid;grid-template-columns:260px 1fr 300px;gap:18px;padding:18px}
+.left .box,.center .box,.right .box{background:var(--card);padding:12px;border-radius:8px;box-shadow:0 6px 18px rgba(17,24,39,0.03)}
+.left .box.small input, .left .box.small textarea{width:100%;margin:6px 0;padding:8px;border:1px solid #e6e8ef;border-radius:6px}
+.left .box label{display:block;margin:6px 0;font-size:13px;color:var(--muted)}
+.questionList{list-style:none;padding:0;margin:0}
+.questionList li{padding:10px;border-radius:6px;margin-bottom:8px;background:#f7f9fc;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.questionList li:hover{background:#eef5ff}
+.meta span{display:inline-block;margin-right:8px;padding:6px 8px;background:#f0f4ff;border-radius:6px;font-size:13px;color:var(--muted)}
+.actions button{margin-right:8px;padding:8px 10px;border-radius:6px;border:none;background:var(--accent);color:#fff;cursor:pointer}
+#codeEditor{width:100%;height:180px;padding:10px;border-radius:8px;border:1px solid #e6e8ef;font-family:monospace;background:#0f1724;color:#f8fafc}
+.runner input{padding:8px;border-radius:6px;border:1px solid #ddd;width:60%;margin-right:8px}
+.runner button{padding:8px 10px;border-radius:6px;border:none;background:#111827;color:#fff}
+.outputBox{background:#0b1220;color:#9bf6a0;padding:12px;border-radius:6px;height:140px;overflow:auto}
+.box h2,.box h3{margin:0 0 8px 0}
+footer{text-align:center;padding:12px;color:#666}
+small{font-size:12px;color:#777}
+#dailyTargets li{margin-bottom:6px}
+#leaderboard li{margin-bottom:6px}
+.dark{
+  --bg:#0b1020;
+  --card:#0f1724;
+  --accent:#4f46e5;
+  color:#dbeafe;
+}
+.dark body{background:var(--bg);color:#dbeafe}
+.dark .box{box-shadow:none}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr;grid-auto-rows:auto}
+  .left,.right{order:2}
+  .center{order:1}
+}
